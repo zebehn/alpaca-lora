@@ -272,8 +272,9 @@ def train(
 
     trainer.train(resume_from_checkpoint=resume_from_checkpoint)
 
-    model.save_pretrained(output_dir)
-
+    #model.save_pretrained(output_dir)
+    model.save_pretrained(output_dir, state_dict=old_state_dict())
+    
     print(
         "\n If there's a warning about missing keys above, please disregard :)"
     )
